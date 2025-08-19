@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GHAR KA — Organic & Homemade | Pickle • Ghee • Honey • Spice Powders</title>
+  <meta name="description" content="GHAR KA: Organic, homemade goodness — Pickles, Ghee, Honey, and authentic Spice Powders. Ghar ka, Ghar se, Ghar tk."/>
+  <meta property="og:title" content="GHAR KA — Organic & Homemade"/>
+  <meta property="og:description" content="Pickle, Ghee, Honey, Spice Powders. Ghar ka, Ghar se, Ghar tk."/>
+  <meta property="og:type" content="website"/>
+  <meta name="theme-color" content="#7a4b1d"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#fbf6ef;          /* paper */
+      --ink:#2b231b;         /* dark text */
+      --brand:#8b4513;       /* rustic brown */
+      --accent:#0f7b4f;      /* herb green */
+      --gold:#d99100;        /* honey */
+      --card:#fffdf8;        /* card paper */
+      --muted:#786a5c;       /* muted text */
+      --ring:#e5d7c4;        /* border */
+      --shadow:0 8px 24px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      color:var(--ink); background:var(--bg);
+    }
+    a{color:inherit; text-decoration:none}
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+    /* NAV */
+    header{
+      position:sticky; top:0; z-index:30; background:linear-gradient(180deg,#fffdf9,rgba(255,253,249,.92));
+      border-bottom:1px solid var(--ring); backdrop-filter:saturate(1.2) blur(6px);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;display:grid;place-items:center;border-radius:12px;background:conic-gradient(from 140deg at 40% 30%,#f7e6c2,#ffe7a3,#f7e6c2);box-shadow:0 2px 8px rgba(141,84,19,.25)}
+    .logo svg{width:28px;height:28px}
+    .brand h1{font-family:"Playfair Display",serif;font-weight:700;letter-spacing:.4px;margin:0;font-size:24px}
+    .tag{font-size:12px;color:var(--muted)}
+    .nav a.btn{padding:10px 14px;border:1px solid var(--brand);border-radius:10px;color:#fff;background:var(--brand);font-weight:600}
+    .nav a.btn.secondary{background:transparent;color:var(--brand)}
+
+    /* HERO */
+    .hero{position:relative;overflow:hidden}
+    .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center;padding:56px 0}
+    .hero h2{font-family:"Playfair Display",serif;font-size:44px;line-height:1.1;margin:0 0 12px}
+    .hero p{font-size:16px;color:var(--muted);max-width:60ch}
+    .pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--ring);padding:6px 10px;border-radius:999px;font-size:12px;color:var(--muted);margin:12px 0}
+    .cta{display:flex;gap:12px;margin-top:14px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:12px;border:1px solid var(--brand);background:var(--brand);color:#fff;font-weight:600;box-shadow:var(--shadow)}
+    .btn.outline{background:transparent;color:var(--brand)}
+    .hero-illustration{aspect-ratio:1/1;border-radius:20px;background:radial-gradient(120% 120% at 10% 10%,#fff4dc,transparent 40%),
+      radial-gradient(120% 120% at 90% 0%,#e9f4ec,transparent 40%),
+      linear-gradient(180deg,#fffdf8,#fff6df);
+      border:1px solid var(--ring);box-shadow:var(--shadow);display:grid;place-items:center;padding:20px}
+
+    /* PRODUCTS */
+    section{padding:56px 0}
+    .section-title{font-family:"Playfair Display",serif;font-size:32px;margin:0 0 12px}
+    .section-sub{color:var(--muted);margin:0 0 24px}
+    .toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:18px}
+    .chip{padding:8px 12px;border:1px solid var(--ring);border-radius:999px;background:#fff;cursor:pointer;font-weight:600}
+    .chip.active{border-color:var(--accent);color:#fff;background:var(--accent)}
+    .search{flex:1;min-width:220px}
+    .search input{width:100%;padding:10px 12px;border:1px solid var(--ring);border-radius:12px;background:#fff}
+
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    .card{grid-column:span 4; background:var(--card);border:1px solid var(--ring);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+    .thumb{height:180px;display:grid;place-items:center;background:linear-gradient(180deg,#fff9eb,#fff);border-bottom:1px solid var(--ring)}
+    .thumb svg{width:120px;height:120px}
+    .card .content{padding:16px;display:flex;flex-direction:column;gap:8px}
+    .badge{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#fff;padding:6px 8px;border-radius:8px;background:var(--accent);width:max-content}
+    .price{font-weight:700}
+    .actions{margin-top:8px;display:flex;gap:10px}
+    .actions a{flex:1;text-align:center}
+
+    /* WHY */
+    .why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .why .point{background:#fff;border:1px solid var(--ring);border-radius:16px;padding:16px;box-shadow:var(--shadow)}
+
+    /* FOOTER */
+    footer{background:#1f1a14;color:#efe5d6;padding:40px 0;margin-top:40px}
+    footer a{color:#efe5d6}
+
+    /* RESPONSIVE */
+    @media (max-width: 980px){
+      .hero .wrap{grid-template-columns:1fr;}
+      .card{grid-column:span 6}
+      .why{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 620px){
+      .card{grid-column:span 12}
+      .brand h1{font-size:20px}
+      .hero h2{font-size:34px}
+      .why{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <header>
+    <div class="container nav" role="navigation" aria-label="Primary">
+      <div class="brand" aria-label="GHAR KA brand">
+        <div class="logo" aria-hidden="true" title="GHAR KA">
+          <!-- Minimal jar + leaf icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M7 5h10M8 3h8M6 6h12v10a4 4 0 0 1-4 4H10a4 4 0 0 1-4-4V6z"/>
+            <path d="M17.5 10c1.5-3 2.5-3.5 4-4" stroke="#0f7b4f"/>
+          </svg>
+        </div>
+        <div>
+          <h1>GHAR KA</h1>
+          <div class="tag">Ghar ka, Ghar se, Ghar tk</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px">
+        <a href="#products" class="btn secondary">Shop Products</a>
+        <a href="#contact" class="btn" aria-label="Order on WhatsApp">Order on WhatsApp</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container wrap">
+      <div>
+        <div class="pill">100% Organic • Homemade • Small Batches</div>
+        <h2>Homemade goodness from our <em>ghar</em> to yours</h2>
+        <p>Pickles that taste like dadi’s recipe, golden ghee slow-cooked to perfection, pure honey, and freshly-ground spice powders. Clean labels, no added chemicals — just honest food.</p>
+        <div class="cta">
+          <a class="btn" href="#products">Browse Products</a>
+          <a class="btn outline" href="#why">Why GHAR KA?</a>
+        </div>
+      </div>
+      <div class="hero-illustration" aria-hidden="true">
+        <!-- Decorative still-life: jar, honey dipper, leaf -->
+        <svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#ffe08a"/>
+              <stop offset="100%" stop-color="#f5b500"/>
+            </linearGradient>
+          </defs>
+          <rect x="20" y="40" width="120" height="180" rx="18" fill="#fff" stroke="#d8c8b3"/>
+          <rect x="20" y="70" width="120" height="150" rx="16" fill="url(#g1)"/>
+          <rect x="26" y="46" width="108" height="18" rx="6" fill="#8b4513"/>
+          <circle cx="240" cy="110" r="60" fill="#0f7b4f" opacity=".08"/>
+          <path d="M230 140h70" stroke="#8b4513" stroke-width="10" stroke-linecap="round"/>
+          <path d="M265 110v60" stroke="#8b4513" stroke-width="10" stroke-linecap="round"/>
+          <circle cx="245" cy="170" r="30" fill="#0f7b4f"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products" aria-labelledby="products-title">
+    <div class="container">
+      <h3 id="products-title" class="section-title">Our Products</h3>
+      <p class="section-sub">Small-batch, preservative-free. Click a product to order on WhatsApp or add to enquiry.</p>
+
+      <div class="toolbar">
+        <div class="chips" role="tablist" aria-label="Filter by category">
+          <button class="chip active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="chip" data-filter="pickle" role="tab">Pickles</button>
+          <button class="chip" data-filter="ghee" role="tab">Ghee</button>
+          <button class="chip" data-filter="honey" role="tab">Honey</button>
+          <button class="chip" data-filter="spice" role="tab">Spice Powders</button>
+        </div>
+        <div class="search" role="search">
+          <input id="search" type="search" placeholder="Search products (e.g., Mango, Turmeric)…" aria-label="Search products" />
+        </div>
+      </div>
+
+      <div class="grid" id="product-grid">
+        <!-- CARD: Aam ka Achaar -->
+        <article class="card" data-category="pickle" data-name="mango aam ka achaar">
+          <div class="thumb" style="background:linear-gradient(180deg,#fff4d8,#fff)">
+            <!-- Mango icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="#0f7b4f" stroke-width="1.2" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 12c0-4 3-7 7-7 3 0 5 2 5 5 0 5-3 9-7 9S6 16 6 12z" fill="#69b34c" stroke="none"/>
+              <path d="M14 5c2-2 3-2 5-2" stroke="#8b4513"/>
+              <path d="M18 6c1.2.5 2 .8 3 .8" stroke="#0f7b4f"/>
+            </svg>
+          </div>
+          <div class="content">
+            <span class="badge">Pickle</span>
+            <h4>Aam ka Achaar</h4>
+            <p class="muted">Unripe mango pickle in cold-pressed mustard oil. No added preservatives.</p>
+            <div class="price">₹ <span>250</span> <small>/ 500 g</small></div>
+            <div class="actions">
+              <a class="btn outline" href="#" aria-label="View details">Details</a>
+              <a class="btn" href="https://wa.me/##########?text=Hello%20GHAR%20KA!%20I%20want%20Aam%20ka%20Achaar%20500g" target="_blank" rel="noopener">WhatsApp Order</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD: Mirchi Achaar -->
+        <article class="card" data-category="pickle" data-name="green chili mirchi achar pickle">
+          <div class="thumb">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 14c4 2 10 1 12-5 3 4 2 9-2 11-3 2-7 1-10-2 0 0 0-2 0-4z" fill="#0f7b4f"/>
+            </svg>
+          </div>
+          <div class="content">
+            <span class="badge" style="background:#0f7b4f">Pickle</span>
+            <h4>Mirchi ka Achaar</h4>
+            <p class="muted">Fiery green chilies with mustard & fennel — sun-cured for depth.</p>
+            <div class="price">₹ <span>220</span> <small>/ 400 g</small></div>
+            <div class="actions">
+              <a class="btn outline" href="#">Details</a>
+              <a class="btn" href="https://wa.me/##########?text=Hello%20GHAR%20KA!%20I%20want%20Mirchi%20ka%20Achaar%20400g" target="_blank" rel="noopener">WhatsApp Order</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD: Desi Ghee -->
+        <article class="card" data-category="ghee" data-name="desi ghee cow bilona">
+          <div class="thumb" style="background:linear-gradient(180deg,#fff2b8,#fff)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#a66a00" stroke-width="1.2" xmlns="http://www.w3.org/2000/svg">
+              <rect x="5" y="3" width="14" height="18" rx="3" fill="#ffd166" stroke="#e0a800"/>
+              <rect x="6" y="5" width="12" height="3" rx="1.5" fill="#a66a00"/>
+            </svg>
+          </div>
+          <div class="content">
+            <span class="badge" style="background:#e8a400">Ghee</span>
+            <h4>Desi Cow Ghee</h4>
+            <p class="muted">Slow-cooked, rich aroma. Lab-tested for purity.</p>
+            <div class="price">₹ <span>699</span> <small>/ 500 ml</small></div>
+            <div class="actions">
+              <a class="btn outline" href="#">Details</a>
+              <a class="btn" href="https://wa.me/##########?text=Hello%20GHAR%20KA!%20I%20want%20Desi%20Cow%20Ghee%20500ml" target="_blank" rel="noopener">WhatsApp Order</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD: Wild Honey -->
+        <article class="card" data-category="honey" data-name="wild forest honey raw">
+          <div class="thumb" style="background:linear-gradient(180deg,#fff0c2,#fff)">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2l8 5v10l-8 5-8-5V7l8-5z" fill="#f4b400"/>
+              <circle cx="12" cy="12" r="3" fill="#fff8e1"/>
+            </svg>
+          </div>
+          <div class="content">
+            <span class="badge" style="background:#d99100">Honey</span>
+            <h4>Wild Forest Honey</h4>
+            <p class="muted">Unheated, unfiltered — straight from trusted beekeepers.</p>
+            <div class="price">₹ <span>399</span> <small>/ 500 g</small></div>
+            <div class="actions">
+              <a class="btn outline" href="#">Details</a>
+              <a class="btn" href="https://wa.me/##########?text=Hello%20GHAR%20KA!%20I%20want%20Wild%20Forest%20Honey%20500g" target="_blank" rel="noopener">WhatsApp Order</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD: Turmeric Powder -->
+        <article class="card" data-category="spice" data-name="haldi turmeric powder">
+          <div class="thumb" style="background:linear-gradient(180deg,#fff7d6,#fff)">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <rect x="4" y="6" width="16" height="12" rx="3" fill="#ffcc4d"/>
+              <path d="M8 10h8M8 13h6" stroke="#8b4513" stroke-width="1.2"/>
+            </svg>
+          </div>
+          <div class="content">
+            <span class="badge" style="background:#a26b00">Spice Powder</span>
+            <h4>Haldi (Turmeric) Powder</h4>
+            <p class="muted">Single-origin, stone-ground for maximum curcumin.</p>
+            <div class="price">₹ <span>120</span> <small>/ 200 g</small></div>
+            <div class="actions">
+              <a class="btn outline" href="#">Details</a>
+              <a class="btn" href="https://wa.me/##########?text=Hello%20GHAR%20KA!%20I%20want%20Haldi%20Powder%20200g" target="_blank" rel="noopener">WhatsApp Order</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD: Garam Masala -->
+        <article class="card" data-category="spice" data-name="garam masala spice blend">
+          <div class="thumb" style="background:linear-gradient(180deg,#ffe9d6,#fff)">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="8" cy="12" r="4" fill="#8b4513"/>
+              <circle cx="16" cy="12" r="4" fill="#a86d2c"/>
+            </svg>
+          </div>
+          <div class="content">
+            <span class="badge" style="background:#8b4513">Spice Blend</span>
+            <h4>Garam Masala</h4>
+            <p class="muted">Warm, aromatic blend — freshly ground in micro batches.</p>
+            <div class="price">₹ <span>180</span> <small>/ 150 g</small></div>
+            <div class="actions">
+              <a class="btn outline" href="#">Details</a>
+              <a class="btn" href="https://wa.me/##########?text=Hello%20GHAR%20KA!%20I%20want%20Garam%20Masala%20150g" target="_blank" rel="noopener">WhatsApp Order</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why" aria-labelledby="why-title">
+    <div class="container">
+      <h3 id="why-title" class="section-title">Why choose GHAR KA?</h3>
+      <div class="why">
+        <div class="point"><strong>Clean Ingredients</strong><br><span class="muted">No artificial colors, flavors or preservatives.</span></div>
+        <div class="point"><strong>Traditional Methods</strong><br><span class="muted">Bilona ghee, sun-cured pickles, stone‑ground spices.</span></div>
+        <div class="point"><strong>Lab-tested Purity</strong><br><span class="muted">Certificates available on request.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / ORDER -->
+  <section id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <h3 id="contact-title" class="section-title">Order & Enquiries</h3>
+      <p class="section-sub">Message us on WhatsApp or send a quick enquiry. We ship pan‑India.</p>
+      <div class="grid">
+        <div class="card" style="grid-column:span 6">
+          <div class="content">
+            <h4>WhatsApp</h4>
+            <p class="muted">Get prices, combos and bulk order quotes instantly.</p>
+            <a class="btn" href="https://wa.me/##########?text=Hello%20GHAR%20KA!%20I%27d%20like%20to%20order." target="_blank" rel="noopener">Chat on WhatsApp</a>
+          </div>
+        </div>
+        <form class="card" style="grid-column:span 6" onsubmit="event.preventDefault();notify();">
+          <div class="content">
+            <h4>Quick Enquiry</h4>
+            <label>Name<br><input required type="text" placeholder="Your Name" style="width:100%;padding:10px;border:1px solid var(--ring);border-radius:10px"></label>
+            <label>Email<br><input required type="email" placeholder="you@example.com" style="width:100%;padding:10px;border:1px solid var(--ring);border-radius:10px"></label>
+            <label>Message<br><textarea rows="4" placeholder="I want 2 × Aam ka Achaar and 1 × Ghee…" style="width:100%;padding:10px;border:1px solid var(--ring);border-radius:10px"></textarea></label>
+            <button class="btn" type="submit">Send Enquiry</button>
+            <div id="note" class="muted" aria-live="polite"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap">
+      <div>© <span id="year"></span> GHAR KA • Homemade & Organic • <a href="#">FSSAI: XXXX</a></div>
+      <div style="display:flex;gap:12px">
+        <a href="https://www.instagram.com/ghar_ka_organic/">Instagram</a>
+        <a href="#">Facebook</a>
+        <a href="#">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Enquiry form toast
+    function notify(){
+      const note = document.getElementById('note');
+      note.textContent = 'Thanks! We\'ll get back to you within a few hours.';
+    }
+
+    // Product filter + search
+    const chips = Array.from(document.querySelectorAll('.chip'));
+    const grid = document.getElementById('product-grid');
+    const cards = Array.from(grid.querySelectorAll('.card'));
+    const search = document.getElementById('search');
+
+    chips.forEach(ch => ch.addEventListener('click', () => {
+      chips.forEach(x => x.classList.remove('active')); ch.classList.add('active');
+      applyFilters();
+    }));
+    search.addEventListener('input', applyFilters);
+
+    function applyFilters(){
+      const active = document.querySelector('.chip.active').dataset.filter;
+      const q = search.value.trim().toLowerCase();
+      cards.forEach(card => {
+        const byCat = active === 'all' || card.dataset.category === active;
+        const byText = !q || card.dataset.name.includes(q);
+        card.style.display = (byCat && byText) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
